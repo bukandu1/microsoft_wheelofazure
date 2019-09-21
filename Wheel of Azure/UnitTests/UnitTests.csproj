@@ -57,9 +57,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestSingleLetter.cs" />
     <Compile Include="TestWheel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestPlayer.cs" />
+    <Compile Include="TestBoard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

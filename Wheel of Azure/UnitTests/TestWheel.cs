@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
 using Wheel_of_Azure;
+using Xunit;
 
-
-namespace UnitTests_Player
+namespace UnitTests_Wheel
 {
     public class XUnitWheelTest
     {
@@ -41,6 +37,22 @@ namespace UnitTests_Player
                 500 };
             int PrizeAmount = wheel.WheelSpin();
             Assert.Contains(PrizeAmount, dollarValues);
+        }
+      
+        public void TestWheel()
+        {
+            Wheel wheel = new Wheel();
+            HashSet<int> ValuesInWheel = new HashSet<int>();
+            foreach (int i in wheel.WheelOfAzure)
+            {
+                ValuesInWheel.Add(i);
+            }
+
+            for (int i = 0; i < 50; i++)
+            {
+                bool res = ValuesInWheel.Contains(wheel.WheelSpin());
+                Assert.True(res);
+            }
         }
 
 
